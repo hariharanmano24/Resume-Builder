@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Designer-Level Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>LinkedIn-Style Resume Builder</h1>
+    <p>Create a professional resume instantly</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label for="themeSelect">Theme:</label>
+      <select id="themeSelect">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="linkedin">LinkedIn</option>
+      </select>
+
+      <label for="templateSelect">Template:</label>
+      <select id="templateSelect">
+        <option value="classic">Classic</option>
+        <option value="modern">Modern</option>
+        <option value="elegant">Elegant</option>
+      </select>
+
+      <label for="colorSelect">Color Palette:</label>
+      <select id="colorSelect">
+        <option value="#0073b1">LinkedIn Blue</option>
+        <option value="#e67e22">Orange Accent</option>
+        <option value="#8e44ad">Purple Elegant</option>
+        <option value="#27ae60">Green Professional</option>
+      </select>
+
+      <label for="layoutSelect">Layout:</label>
+      <select id="layoutSelect">
+        <option value="single">Single Column</option>
+        <option value="double">Two Column</option>
+      </select>
+    </section>
+
+    <section class="form-section">
+      <form id="resumeForm">
+        <h2>Personal Information</h2>
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="text" id="profession" placeholder="Profession" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="phone" placeholder="Phone Number" required>
+        <input type="text" id="linkedin" placeholder="LinkedIn URL">
+        <input type="text" id="website" placeholder="Portfolio/Website URL">
+
+        <h2>Skills (comma separated)</h2>
+        <input type="text" id="skills" placeholder="e.g., Excel, Python, SQL" required>
+
+        <h2>Education</h2>
+        <textarea id="education" placeholder="Degree - University - Year" required></textarea>
+
+        <h2>Experience</h2>
+        <textarea id="experience" placeholder="Job Title - Company - Duration - Responsibilities" required></textarea>
+
+        <h2>Projects</h2>
+        <textarea id="projects" placeholder="Project Name - Description"></textarea>
+
+        <button type="button" onclick="generateResume()">Generate Resume</button>
+      </form>
+    </section>
+
+    <section class="resume-section" id="resumeSection"></section>
+
+    <section class="download-section">
+      <button onclick="downloadPDF()"><i class="fa fa-download"></i> Download as PDF</button>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
