@@ -23,4 +23,3 @@ function generateResume(){
   const skills=document.getElementById("skills").value.split(',');
   const education=document.getElementById("education").value;
   const experience=document.getElementById("experience").value;
-  const projects=document.getElement
